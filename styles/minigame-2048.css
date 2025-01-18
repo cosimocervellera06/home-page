@@ -1,0 +1,113 @@
+/* Stili del contenitore principale del gioco */
+#game-container {
+  text-align: center;
+  background-color: rgba(245, 245, 245, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  height: 800px;
+  width: 30%;
+  float: left;
+  margin-bottom: 100px;
+}
+
+/* Stili del titolo del gioco */
+#game-title {
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Stili della descrizione del gioco */
+#game-description {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Stili del punteggio massimo raggiunto */
+#max-score {
+  font-size: 1em;
+  margin-top: 20px;
+  color: #666;
+}
+
+/* Stili per il valore del punteggio massimo raggiunto */
+#max-score-value {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Stili della tabella che contiene le tessere del gioco */
+#field {
+  border-collapse: collapse;
+  margin: 0 auto;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Stili delle tessere */
+.cell {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2em;
+  font-weight: bold;
+  border: 2px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+/* Stili dei pulsanti delle frecce */
+.arrow-button {
+  font-size: 1.5em;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: #ddd;
+  color: #333;
+  border-radius: 50%; /* Usa un bordo circolare */
+  cursor: pointer;
+  position: absolute; /* Posizionamento assoluto per il layout */
+}
+
+/* Stili del contenitore dei pulsanti */
+#buttons-container{
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+#circle {
+  width: 100px;
+  height: 100px;
+  position: relative; /* Posizionamento relativo per contenere i pulsanti */
+  margin: 0 auto;
+  border-radius: 50%; /* Forma di cerchio */
+  background-color: #f5f5f5;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Posizionamento dei pulsanti all'interno del cerchio */
+#up-button {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#down-button {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(50%);
+}
+
+#left-button {
+  left: 0;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#right-button {
+  right: 0;
+  top: 50%;
+  transform: translateX(50%) translateY(-50%);
+}
+

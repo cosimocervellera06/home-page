@@ -1,0 +1,89 @@
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+/* Stile per l'elemento hr personalizzato */
+hr {
+  margin: 20px auto; /* Margine sopra e sotto l'hr */
+  border: none; /* Rimuove la linea predefinita */
+  height: 2px; /* Spessore dell'hr */
+  background-image: linear-gradient(to right, #f0f0f0, #333, #f0f0f0); /* Gradiente di colore */
+}
+
+/*stile scrittura typing*/
+.typing-container {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 24px;
+}
+
+#cursor {
+  opacity: 1;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* dimensione della barra di scorrimento */
+::-webkit-scrollbar {
+  width: 12px; /* larghezza della barra di scorrimento */
+  height: 12px; /* altezza della barra di scorrimento */
+}
+/* design della barra di scorrimento */
+::-webkit-scrollbar-thumb {
+  background-color: #666; /* colore della barra di scorrimento */
+  border-radius: 10px; /* bordo arrotondato */
+}
+/* design del track */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* colore del track */
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  transition: height 0.5s ease; /* Aggiungi una transizione per l'animazione */
+  overflow: hidden;
+  z-index: 2;
+}
+
+.footer-expanded {
+  height: auto; /* Allarga il footer quando è espanso */
+}

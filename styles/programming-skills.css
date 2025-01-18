@@ -1,0 +1,72 @@
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.skill-card {
+  width: 9%; /* Imposta la larghezza delle card, considerando il margine */
+  height: 200px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.skill-card img {
+  max-width: 80px;
+  max-height: 80px;
+  margin-top: 10px;
+}
+
+.skill-card:hover {
+  transform: scale(1.1);
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.skill-card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Colori delle card */
+.c { background-color: #03599C; color: white; }
+.cpp { background-color: #F0F0F0; color: black; }
+.python { background-color: #306998; color: white; }
+.html { background-color: #FF5733; color: white; }
+.css { background-color: #264de4; color: white; }
+.javascript { background-color: #F0DB4F; color: black; }
+.java { background-color: #007396; color: white; }
+.kotlin { background-color: #F5F5F5; color: black; }
+.android { background-color: #3DDC84; color: white; }
+

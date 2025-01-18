@@ -1,0 +1,70 @@
+/*tema chiaro*/
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgba(242,242,242,50);
+  padding: 20px;
+  z-index: 1;
+}
+
+/*tema scuro*/
+.theme-dark {
+  background-color: rgba(51,51,51,33);
+  color: #fff;
+}
+
+.theme-dark #search-input {
+  background-color: #555;
+  color: #fff;
+}
+
+.theme-dark #search-button {
+  background-color: #1e7d33;
+}
+
+.theme-dark footer {
+  background-color: #333;
+  color: #fff;
+}
+
+.theme-dark #theme-toggle {
+  background-color: #1e7d33;
+}
+
+/*gioco 2048*/
+/* Stili del titolo del gioco */
+.theme-dark #game-title {
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: #FFF;
+}
+
+/* Stili della descrizione del gioco */
+.theme-dark #game-description {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #CCC;
+}
+
+/* Stili del punteggio massimo raggiunto */
+.theme-dark #max-score {
+  font-size: 1em;
+  margin-top: 20px;
+  color: #CCC;
+}
+
+/* Stili per il valore del punteggio massimo raggiunto */
+.theme-dark #max-score-value {
+  font-weight: bold;
+  color: #FFF;
+}
+
+
+#theme-toggle {
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+}

@@ -1,0 +1,21 @@
+#clock-container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 80px;
+  background-size: cover;
+  background-position: center;
+  width: 300px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Seven Segment', sans-serif;
+  font-size: 72px;
+  color: #00ff00; /* Colore del testo */
+  text-align: center;
+  border: 5px solid #00ff00; /* Colore del bordo */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}

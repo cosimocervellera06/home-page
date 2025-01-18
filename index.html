@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberCos</title>
+  <!--pagine stile-->
+  <link rel="stylesheet" href="styles/barra-ricerca.css">
+  <link rel="stylesheet" href="styles/base-sito.css">
+  <link rel="stylesheet" href="styles/carosello-img.css">
+  <link rel="stylesheet" href="styles/minigame-2048.css">
+  <link rel="stylesheet" href="styles/orologio.css">
+  <link rel="stylesheet" href="styles/programming-skills.css">
+  <link rel="stylesheet" href="styles/temi.css">
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/seven-segment">
+  <!--Javascript-->
+  <script src="scripts/barra-ricerca.js"></script>
+  <script src="scripts/carosello-img.js"></script>
+  <script src="scripts/minigame-2048.js"></script>
+  <script src="scripts/orologio.js"></script>
+  <script src="scripts/programming-skills.js"></script>
+  <script src="scripts/sfondo.js"></script>
+  <script src="scripts/tema.js"></script>
+  <script src="scripts/typing-text.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body class="theme-dark">
+  <header>
+    <div class="typing-container">
+      <h1>I am <span id="typing-text"></span><span id="cursor">|</span></h1>
+    </div>
+  </header>
+  <canvas id="canvas"></canvas>
+  <main>
+    <div id="clock-container">
+      <div id="clock"></div>
+    </div>
+    <div id="search">
+      <input type="text" id="search-input" placeholder="Cerca su Internet">
+      <button id="search-button" class="button1">Cerca</button>
+    </div>
+    <div id="browser-choice" class="browser-buttons">
+      <input type="radio" id="b1" name="browser" value="https://www.google.it/search?q=" checked>
+      <label for="b1">
+        <img src="icone/google.png" alt="Chrome">
+      </label>
+      <input type="radio" id="b2" name="browser" value="https://www.bing.com/search?q=">
+      <label for="b2">
+        <img src="icone/bing.png" alt="Bing">
+      </label>
+      <input type="radio" id="b3" name="browser" value="https://it.search.yahoo.com/search?p=">
+      <label for="b3">
+        <img src="icone/yahoo.png" alt="Yahoo">
+      </label>
+      <input type="radio" id="b4" name="browser" value="https://duckduckgo.com/?q=">
+      <label for="b4">
+        <img src="icone/DuckDuckGo.png" alt="DuckDuckGo">
+      </label>
+    </div>
+    <div id="favorites">
+      <h2>I miei preferiti</h2>
+      <ul id="favorites-list">
+        <li><a target="_blank" href="https://replit.com/~"><img src="icone/replit.png" alt="Replit"></a></li>
+        <li><a target="_blank" href="https://classroom.google.com/h"><img src="icone/classroom.png" alt="Classroom"></a></li>
+        <li><a target="_blank" href="https://www.desmos.com/calculator?lang=it"><img src="icone/desmos.png" alt="Desmos"></a></li>
+        <li><a target="_blank" href="https://translate.google.com/"><img src="icone/traduttore.png" alt="Traduttore"></a></li>
+        <li><a target="_blank" href="https://chat.openai.com/"><img src="icone/chatGPT.png" alt="Chat GPT"></a></li>
+        <li><a target="_blank" href="https://mail.google.com/mail/u/0/#inbox"><img src="icone/gmail.png" alt="Gmail"></a></li>
+        <li><a target="_blank" href="https://drive.google.com/drive/u/0/my-drive"><img src="icone/drive.png" alt="Drive"></a></li>
+        <li><a target="_blank" href="https://www.google.com/maps"><img src="icone/maps.png" alt="Maps"></a></li>
+        <li><a target="_blank" href="https://chrome.google.com/webstore/category/extensions?hl=it"><img src="icone/ChromeWebStore.png" alt="Chrome web store"></a></li>
+        <li><a target="_blank" href="https://www.youtube.com/"><img src="icone/youtube.png" alt="Youtube"></a></li>
+        <li><a target="_blank" href="https://temp-mail.org/"><img src="icone/tempmail.png" alt="temp-mail"></a></li>
+        <li><a target="_blank" href="https://gchq.github.io/CyberChef"><img src="icone/CyberChef_logo.png" alt="cyberchef"></a></li>
+        <li><a target="_blank" href="https://training.olicyber.it/"><img src="icone/logo_olicyber.png" alt="olicyber"></a></li>
+        <li><a target="_blank" href="https://www.netacad.com/portal/learning"><img src="icone/cisco_logo.png" alt="netacad"></a></li>
+        <li><a target="_blank" href="https://www.ilovepdf.com/it"><img src="icone/ilovepdf-logo.png" alt="ilovepdf"></a></li>
+        <!--<li><a target="_blank" href=""><img src="" alt=""></a></li>-->
+      </ul>
+    </div>
+  </main>
+  <hr>
+  <section>
+    <div id="game-container">
+      <div id="game-title">2048</div>
+      <div id="game-description">Unisci le tessere per raggiungere il numero 2048!</div>
+      <div id="max-score">Punteggio massimo raggiunto: <span id="max-score-value">0</span></div>
+      <div id="buttons-container">
+        <div id="circle">
+          <button id="up-button" class="arrow-button">&#9650;</button>
+          <button id="left-button" class="arrow-button">&#9664;</button>
+          <button id="right-button" class="arrow-button">&#9654;</button>
+          <button id="down-button" class="arrow-button">&#9660;</button>
+        </div>
+      </div>
+      <table id="field"></table>
+      <button id="start-button" class="button1">Avvia il gioco</button>
+    </div>
+    <div class="carosello-container">
+      <div class="carosello"></div>  
+      <div class="pulsanti-container">
+        <button id="prev-button" class="cambio-button">&#9664;</button>
+        <button id="next-button" class="cambio-button">&#9654;</button>
+        <div class="counter">
+          <span id="current">1</span> / <span id="total">20</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <hr>
+  <h1 style="text-align: center;">Le  mie competenze</h1>
+  <div class="portfolio">
+    <div class="skill-card c">
+      <div class="card-inner">
+        <div class="front">
+          <img src="icone/C_Logo.png" alt="C">
+        </div>
+        <div class="back">
+          <h2>C</h2>
+        </div>
+      </div>
+    </div>
+    <div class="skill-card cpp">
+      <div class="card-inner">
+        <div class="front">
+          <img src="icone/C++_Logo.png" alt="C++">
+        </div>
+        <div class="back">
+          <h2>C++</h2>
+        </div>
+      </div>
+    </div>
+    <div class="skill-card python">
+      <div class="card-inner">
+        <div class="front">
+          <img src="icone/Python_Logo.png" alt="Python">
+        </div>
+        <div class="back">
+          <h2>Python</h2>
+        </div>
+      </div>
+    </div>
+    <div class="skill-card html">
+      <div class="card-inner">
+        <div class="front">
+          <img src="icone/HTML5_Logo.png" alt="HTML">
+        </div>
+        <div class="back">
+          <h2>HTML</h2>
+        </div>
+      </div>
+    </div>
+    <div class="skill-card css">
+      <div class="card-inner">
+        <div class="front">
+          <img src="icone/CSS3_Logo.png" alt="CSS">
+        </div>
+        <div class="back">
+          <h2>CSS</h2>
+        </div>
+      </div>
+    </div>
+    <div class="skill-card javascript">
+      <div class="card-inner">
+        <div class="front">
+          <img src="icone/JavaScript_Logo.png" alt="JavaScript">
+        </div>
+        <div class="back">
+          <h2>JavaScript</h2>
+        </div>
+      </div>
+    </div>
+    <div class="skill-card java">
+      <div class="card-inner">
+        <div class="front">
+          <img src="icone/Java_Logo.png" alt="Java">
+        </div>
+        <div class="back">
+          <h2>Java</h2>
+        </div>
+      </div>
+    </div>
+    <div class="skill-card android">
+      <div class="card-inner">
+        <div class="front">
+          <img src="icone/android_Logo.png" alt="Android">
+        </div>
+        <div class="back">
+          <h2>Android</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Created by Cosimo Cervellera | © All rights reserved</p>
+    <button id="theme-toggle">Tema Chiaro</button>
+  </footer>
+</body>
+</html>
